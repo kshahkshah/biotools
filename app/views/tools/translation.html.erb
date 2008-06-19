@@ -1,0 +1,7 @@
+Enter Your Sequence(s) below. One sequence per line.
+<% form_remote_tag :url => '/tools/translate' do -%>
+	<%= text_field_tag :seq %>
+	<%= submit_tag 'Submit' %>
+<% end -%>
+
+<div id="results"></div>

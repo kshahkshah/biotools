@@ -1,0 +1,52 @@
+<div class="dna">
+  <div class="header">Sequence</div>
+	<% @seq.window_search(5,5) do | x | %>
+		<%= x %> 
+	<% end %>
+</div>
+
+<div class="dna">
+  <div class="header">Translation</div>
+	Frame 1: <%= @seq.translate(1) %><br />
+	Frame 2: <%= @seq.translate(2) %><br />
+	Frame 3: <%= @seq.translate(3) %><br />
+	Frame 4: <%= @seq.translate(4) %><br />
+	Frame 5: <%= @seq.translate(5) %><br />
+	Frame 6: <%= @seq.translate(6) %>
+</div>
+
+<div class="dna">
+  <div class="header">Complement</div>
+	<% @seq.complement.window_search(5,5) do | x | %>
+		<%= x %> 
+	<% end %>
+</div>
+<div class="dna">
+  <div class="header">Complement Translation</div>
+	Frame 1: <%= @seq.complement.translate(1) %><br />
+	Frame 2: <%= @seq.complement.translate(2) %><br />
+	Frame 3: <%= @seq.complement.translate(3) %><br />
+	Frame 4: <%= @seq.complement.translate(4) %><br />
+	Frame 5: <%= @seq.complement.translate(5) %><br />
+	Frame 6: <%= @seq.complement.translate(6) %>
+</div>
+
+<div>
+  <p>
+	<strong>Characteristics</strong><br />
+	<%= @seq.gc_percent %>% GC Content<br />
+
+	<strong>DNA Composition</strong><br />
+	<% @seq.composition.each do | x | 	%>
+		<%= x[0].capitalize %> <%= x[1] %><br />
+	<% end %>
+
+	<strong>AA Composition</strong><br />
+	<% @seq.translate.composition.each do | x | %>
+		<%= x[0].capitalize %> <%= x[1] %><br />
+	<% end %>
+
+	<strong>Molecular Weight</strong><br />
+	<%= @seq.translate.molecular_weight %>
+  </p>
+</div>
