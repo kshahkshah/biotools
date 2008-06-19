@@ -1,5 +1,6 @@
 tmp/**/*
 log/*
+config/deploy.rb
 config/database.yml
 config/environments/production.rb
 .DS_Store
