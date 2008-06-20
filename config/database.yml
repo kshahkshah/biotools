@@ -22,4 +22,5 @@ production:
     host: localhost
     database: biotools_production
     username: root
-    password:
+    password: redsun109
+    socket: /var/run/mysqld/mysqld.sock
