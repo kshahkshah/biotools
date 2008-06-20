@@ -8,4 +8,4 @@ We are using the BioRuby library to augment development. Currently I'm intereste
 great user interface for the existing library with the ability to save, send, and associate data 
 with users.
 
--- trivial change to test if the database symlink dies
+-- another minor change for the same effect, this time with a cap task added
