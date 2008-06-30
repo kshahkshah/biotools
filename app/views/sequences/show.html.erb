@@ -1,0 +1,28 @@
+<p>
+  <b>User:</b>
+  <%=h @sequence.user_id %>
+</p>
+
+<p>
+  <b>Data:</b>
+  <%=h @sequence.data %>
+</p>
+
+<p>
+  <b>Sequence:</b>
+  <%=h @sequence.sequence_id %>
+</p>
+
+<p>
+  <b>Label:</b>
+  <%=h @sequence.label %>
+</p>
+
+<p>
+  <b>Acid:</b>
+  <%=h @sequence.acid %>
+</p>
+
+
+<%= link_to 'Edit', edit_sequence_path(@sequence) %> |
+<%= link_to 'Back', sequences_path %>

@@ -2,16 +2,82 @@
                       "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
-	<title>corexchange molecular biology tools for humans</title>
+	<title>BioTools</title>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<%= javascript_include_tag :defaults %>
+	<%= javascript_include_tag 'superfish.js' %>
+	<%= javascript_include_tag 'block.ui.js' %>
 	<%= stylesheet_link_tag "styles", :media => "all" %>
+	<script type="text/javascript"> 
+
+    function get_menu() { 
+		$.ajax({ url: 'menu/sequence/new', cache: false, dataType: "script" });
+    }
+
+	$(document).ready(function(){
+		$("ul.nav").superfish();
+
+		$('#log').click(function() { 
+		    jQuery.blockUI({ message: $('#login_form') }); 
+		    setTimeout(jQuery.unblockUI, 10000); 
+		});
+
+        $('#sequence_new').click(function() { 
+            $.blockUI({ message: '<h1><img src="/images/busy.gif" /> Just a moment...</h1>' }); 
+            get_menu(); 
+        });
+	});
+	</script>
   </head>
   <body>
+  <div id="overlay" style="display:none;"></div>
+  <div id="login_form" style="display:none;">
+	<% form_tag session_path do -%>
+	<p><label for="login">Login</label><br/>
+	<%= text_field_tag 'login' %></p>
+
+	<p><label for="password">Password</label><br/>
+	<%= password_field_tag 'password' %></p>
+
+	<p><label for="remember_me">Remember me:</label>
+	<%= check_box_tag 'remember_me' %></p>
+
+	<p><%= submit_tag 'Log in' %></p>
+	<% end -%>
+  </div>
   <div id="container">
-	<div id="header"></div>
-	<div id="content"><%= yield :layout %></div>
-	<div id="footer">&copy; Copyright 2008 Kunal Shah, All Rights Reserved.</div>
+	<div id="toolbar">
+		<ul class="nav">
+			<li class="current">
+				<a href="#a">Sequences</a>
+				<ul>
+					<li id="sequence_new"><a href="#aa">New</a></li>
+					<li id="sequence_open"><a href="#ab">Open</a></li>
+					<li id="sequence_recent"><a href="#ac">Recent</a></li>
+				</ul>
+			</li>
+			<li><a href="#c">Tools</a></li>
+			<li><a href="#b">Literature</a></li>
+			<li>
+				<a href="#d">People</a>
+				<ul>
+					<li><a href="#da">My Lab</a></li>
+					<li><a href="#db">Friends Lab 1</a></li>
+					<li><a href="#db">Friends Lab 2</a></li>
+				</ul>
+			</li>
+		</ul>
+		<ul class="nav" id="usertab">
+			<li id="log">
+				<% if logged_in? %>
+				<a href="#e"><%= link_to "Sign Out", new_session_path %></a>
+				<% else %>
+				<a href="#e"><%= link_to "Sign In", new_session_path %></a>
+				<% end %>
+			</li>
+		</ul>
+	</div>
+	<div id="frame"><%= yield :layout %></div>
   </div>
   </body>
 </html>

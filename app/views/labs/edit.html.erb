@@ -1,0 +1,36 @@
+<h1>Editing lab</h1>
+
+<% form_for(@lab) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+		<%= f.label :title %><br />
+    <%= f.text_field :title %>
+  </p>
+  <p>
+		<%= f.label :location %><br />
+    <%= f.text_field :location %>
+  </p>
+  <p>
+		<%= f.label :description %><br />
+    <%= f.text_area :description %>
+  </p>
+  <p>
+		<%= f.label :homepage %><br />
+    <%= f.text_field :homepage %>
+  </p>
+  <p>
+		<%= f.label :pi %><br />
+    <%= f.text_field :pi %>
+  </p>
+  <p>
+		<%= f.label :funding %><br />
+    <%= f.text_field :funding %>
+  </p>
+  <p>
+    <%= f.submit "Update" %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @lab %> |
+<%= link_to 'Back', labs_path %>

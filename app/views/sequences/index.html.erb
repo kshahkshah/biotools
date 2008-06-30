@@ -1,0 +1,28 @@
+<h1>Listing sequences</h1>
+
+<table>
+  <tr>
+    <th>User</th>
+    <th>Data</th>
+    <th>Sequence</th>
+    <th>Label</th>
+    <th>Acid</th>
+  </tr>
+
+<% for sequence in @sequences %>
+  <tr>
+    <td><%=h sequence.user_id %></td>
+    <td><%=h sequence.data %></td>
+    <td><%=h sequence.sequence_id %></td>
+    <td><%=h sequence.label %></td>
+    <td><%=h sequence.acid %></td>
+    <td><%= link_to 'Show', sequence %></td>
+    <td><%= link_to 'Edit', edit_sequence_path(sequence) %></td>
+    <td><%= link_to 'Destroy', sequence, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New sequence', new_sequence_path %>

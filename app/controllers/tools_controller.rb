@@ -1,6 +1,9 @@
 require 'bio'
 
 class ToolsController < ApplicationController
+  def index
+  end
+
   def translation
   end
 

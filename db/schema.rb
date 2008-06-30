@@ -9,7 +9,28 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 1) do
+ActiveRecord::Schema.define(:version => 20080630191754) do
+
+  create_table "labs", :force => true do |t|
+    t.string   "title"
+    t.string   "location"
+    t.text     "description"
+    t.string   "homepage"
+    t.string   "pi"
+    t.string   "funding"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "sequences", :force => true do |t|
+    t.integer  "user_id"
+    t.text     "data"
+    t.integer  "sequence_id"
+    t.string   "label"
+    t.string   "acid"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "users", :force => true do |t|
     t.string   "login"
@@ -20,6 +41,7 @@ ActiveRecord::Schema.define(:version => 1) do
     t.datetime "updated_at"
     t.string   "remember_token"
     t.datetime "remember_token_expires_at"
+    t.integer  "lab_id"
   end
 
 end

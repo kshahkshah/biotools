@@ -1,0 +1,4 @@
+puts "javascript touched"
+
+page.replace_html "overlay", :partial => "menu"
+page << "jQuery.blockUI({ message: $('#overlay') });"

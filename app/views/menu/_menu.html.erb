@@ -1,0 +1,41 @@
+<div class="options_bar">
+	<a href="javascript:$.unblockUI();">Close</a>
+</div>
+
+<div class="options_frame">
+  <ul class="options">
+	<li>
+		<div class="options_head">
+<%= link_to_function "Import" , "$('#options_text_import').toggle();" %>
+		</div>
+		<div class="options_text">
+Open a sequence from a file on your hard drive
+		</div>
+	</li>
+	<li>
+		<div class="options_head">
+<%= link_to "Blank", new_sequence_path %>
+		</div>
+		<div class="options_text">
+Open a new sequence file with no data
+		</div>
+	</li>
+	<li>
+		<div class="options_head">
+<%= link_to_function "Search" , "$('#options_text_search').toggle();" %>
+		</div>
+		<div class="options_text">
+Find a sequence by searching the available databases
+		</div>
+	</li>
+  </ul>
+</div>
+
+<div class="options_info">
+	<div id="options_text_import" style="display:none">
+		This function is not yet implemented. Check back. attachment_fu you
+	</div>
+	<div id="options_text_search" style="display:none">
+		This function is not yet implemented. Check back. thinking sphinx
+	</div>
+</div>

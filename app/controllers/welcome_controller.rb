@@ -6,4 +6,8 @@ class WelcomeController < ApplicationController
   def home
 
   end
+
+  def redirect
+    redirect_to "http://www.rubyonrails.org"
+  end
 end

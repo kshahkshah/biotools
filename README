@@ -1,11 +1,17 @@
 == Welcome to BioTools ==
 
-Molecular Biology for Humans
+Molecular Biology Tools for Humans
 
-If you're interested in joining the project email Kunal Shah, kunalashokshah@gmail.com
+If you're interested in joining the project email Kunal Shah, kunal ashok shah (at) gmail dot com
 
-We are using the BioRuby library to augment development. Currently I'm interested in building a 
-great user interface for the existing library with the ability to save, send, and associate data 
-with users.
+I've just set up this project, and rather than porting old functionality from my php based biotools website, 
+I'm recreating this site in Rails. The front end interface will be the first thing to developed. I intend to 
+make it a "skin" of sorts for the BioRuby library.
 
--- another minor change for the same effect, this time with a cap task added
+I'm exploring ways to save, pipe, share, import and export the various data types on the site. If you have a 
+suggestion I'd love to hear it. As developers join the project I'll move to a more disciplined feature based 
+release schedule and start forking off development. Until then:
+
+=====
+This project is in a pre-alpha state and clearly not meant to be used yet. When that changes this message will too.
+=====

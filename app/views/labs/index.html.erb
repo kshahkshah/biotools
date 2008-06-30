@@ -1,0 +1,30 @@
+<h1>Listing labs</h1>
+
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Location</th>
+    <th>Description</th>
+    <th>Homepage</th>
+    <th>Pi</th>
+    <th>Funding</th>
+  </tr>
+
+<% for lab in @labs %>
+  <tr>
+    <td><%=h lab.title %></td>
+    <td><%=h lab.location %></td>
+    <td><%=h lab.description %></td>
+    <td><%=h lab.homepage %></td>
+    <td><%=h lab.pi %></td>
+    <td><%=h lab.funding %></td>
+    <td><%= link_to 'Show', lab %></td>
+    <td><%= link_to 'Edit', edit_lab_path(lab) %></td>
+    <td><%= link_to 'Destroy', lab, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New lab', new_lab_path %>

@@ -1,0 +1,32 @@
+<h1>Editing sequence</h1>
+
+<% form_for(@sequence) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+		<%= f.label :user_id %><br />
+    <%= f.text_field :user_id %>
+  </p>
+  <p>
+		<%= f.label :data %><br />
+    <%= f.text_area :data %>
+  </p>
+  <p>
+		<%= f.label :sequence_id %><br />
+    <%= f.text_field :sequence_id %>
+  </p>
+  <p>
+		<%= f.label :label %><br />
+    <%= f.text_field :label %>
+  </p>
+  <p>
+		<%= f.label :acid %><br />
+    <%= f.text_field :acid %>
+  </p>
+  <p>
+    <%= f.submit "Update" %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @sequence %> |
+<%= link_to 'Back', sequences_path %>

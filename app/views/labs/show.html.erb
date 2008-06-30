@@ -1,0 +1,33 @@
+<p>
+  <b>Title:</b>
+  <%=h @lab.title %>
+</p>
+
+<p>
+  <b>Location:</b>
+  <%=h @lab.location %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%=h @lab.description %>
+</p>
+
+<p>
+  <b>Homepage:</b>
+  <%=h @lab.homepage %>
+</p>
+
+<p>
+  <b>Pi:</b>
+  <%=h @lab.pi %>
+</p>
+
+<p>
+  <b>Funding:</b>
+  <%=h @lab.funding %>
+</p>
+
+
+<%= link_to 'Edit', edit_lab_path(@lab) %> |
+<%= link_to 'Back', labs_path %>
