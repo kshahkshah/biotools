@@ -2,7 +2,7 @@ class SequencesController < ApplicationController
   # GET /sequences
   # GET /sequences.xml
   def index
-    @sequences = Sequence.find(:all)
+    @sequences = self.current_user.sequences
 
     respond_to do |format|
       format.html # index.html.erb
@@ -40,7 +40,7 @@ class SequencesController < ApplicationController
   # POST /sequences
   # POST /sequences.xml
   def create
-    @sequence = Sequence.new(params[:sequence])
+    @sequence = Sequence.new(params[:sequence].merge(:user_id => self.current_user.id))
 
     respond_to do |format|
       if @sequence.save

@@ -2,18 +2,14 @@
 
 <table>
   <tr>
-    <th>User</th>
     <th>Data</th>
-    <th>Sequence</th>
     <th>Label</th>
     <th>Acid</th>
   </tr>
 
 <% for sequence in @sequences %>
   <tr>
-    <td><%=h sequence.user_id %></td>
     <td><%=h sequence.data %></td>
-    <td><%=h sequence.sequence_id %></td>
     <td><%=h sequence.label %></td>
     <td><%=h sequence.acid %></td>
     <td><%= link_to 'Show', sequence %></td>
