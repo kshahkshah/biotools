@@ -26,6 +26,11 @@ body {
   float:right;
 }
 
+td {
+  text-align:right;
+  padding:0 5px 0 0;
+}
+
  
 /* remove any default styles */
 .nav, .nav *, .options {
@@ -57,10 +62,15 @@ body {
 	width:100%;
 	list-style:none;
 }
-.options li {
+.trips {
 	float:left; /* must float all li elements. Vertical submenu items are restrained by parent ul width (see .nav ul rules above) */
 	position:relative; /* make child submenu ul position relative to parent li */
 	width:33%;
+}
+.split {
+	float:left; /* must float all li elements. Vertical submenu items are restrained by parent ul width (see .nav ul rules above) */
+	position:relative; /* make child submenu ul position relative to parent li */
+	width:49%;
 }
 .options li:hover, .options a:hover {
 	background: #CFDEFF; /* hover highlight */

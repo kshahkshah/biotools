@@ -17,6 +17,7 @@ class SessionsController < ApplicationController
       redirect_back_or_default('/')
       flash[:notice] = "Logged in successfully"
     else
+      flash[:warning] = "Could not log in, check your username and password and try again"
       redirect_to :controller => 'welcome', :action => 'home'
     end
   end

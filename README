@@ -6,12 +6,29 @@ If you're interested in joining the project email Kunal Shah, kunal ashok shah (
 
 I've just set up this project, and rather than porting old functionality from my php based biotools website, 
 I'm recreating this site in Rails. The front end interface will be the first thing to developed. I intend to 
-make it a "skin" of sorts for the BioRuby library.
+make it a "skin" of sorts for the BioRuby library before delving further.
 
 I'm exploring ways to save, pipe, share, import and export the various data types on the site. If you have a 
 suggestion I'd love to hear it. As developers join the project I'll move to a more disciplined feature based 
 release schedule and start forking off development. Until then:
 
-=====
-This project is in a pre-alpha state and clearly not meant to be used yet. When that changes this message will too.
-=====
+========================================
+This project is pre-alpha and not meant to be used.
+When that changes this message will too.
+
+The application is currently deployed at:
+http://biotools.slowdownlook.com/
+========================================
+
+Required Gems: Bio
+Required Plugins:
+	jRails (jQuery drop in replacement for Prototype/Scriptaculous, replaces helpers)
+	restful_authentication
+	attachment_fu
+
+
+Architecture of sequence.rb
+
+My AR Model is intended to abstract the BioRuby functionality rather than extend the class via a module. 
+I've given this some thought and believe it'll be the easiest thing for me to do since I am far from being 
+fluent in the library as is. If you have a suggestion on this, please let me know.

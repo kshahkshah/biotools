@@ -19,7 +19,6 @@
 
 		$('#log').click(function() { 
 		    jQuery.blockUI({ message: $('#login_form') }); 
-		    setTimeout(jQuery.unblockUI, 10000); 
 		});
 
         $('#sequence_new').click(function() { 
@@ -32,18 +31,7 @@
   <body>
   <div id="overlay" style="display:none;"></div>
   <div id="login_form" style="display:none;">
-	<% form_tag session_path do -%>
-	<p><label for="login">Login</label><br/>
-	<%= text_field_tag 'login' %></p>
-
-	<p><label for="password">Password</label><br/>
-	<%= password_field_tag 'password' %></p>
-
-	<p><label for="remember_me">Remember me:</label>
-	<%= check_box_tag 'remember_me' %></p>
-
-	<p><%= submit_tag 'Log in' %></p>
-	<% end -%>
+	<%= render :partial => '/sessions/login' %>
   </div>
   <div id="container">
 	<div id="toolbar">
@@ -68,15 +56,16 @@
 			</li>
 		</ul>
 		<ul class="nav" id="usertab">
-			<li id="log">
-				<% if logged_in? %>
-				<a href="#e"><%= link_to "Sign Out", new_session_path %></a>
-				<% else %>
-				<a href="#e"><%= link_to "Sign In", new_session_path %></a>
-				<% end %>
-			</li>
+			<% if logged_in? %>
+			<li><a href="#e"><%= link_to "Sign Out", logout_path %></a></li>
+			<% else %>
+			<li id="log"><a href="#e"><%= link_to "Sign In", login_path %></a></li>
+			<li><a href="#e"><%= link_to "Register", signup_path %></a></li>
+			<% end %>
 		</ul>
 	</div>
+    <% if flash[:notice] %><div class="notice"><%= flash[:notice] %></div><% end %>
+    <% if flash[:warning] %><div class="warning"><%= flash[:warning] %></div><% end %>
 	<div id="frame"><%= yield :layout %></div>
   </div>
   </body>

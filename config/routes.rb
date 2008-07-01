@@ -39,6 +39,9 @@ ActionController::Routing::Routes.draw do |map|
   map.root :controller => "welcome"
 
   map.connect 'menu/:section/:activity', :controller => 'menu', :action => 'view'
+  map.signup '/signup', :controller => 'users', :action => 'new'
+  map.login  '/login', :controller => 'sessions', :action => 'new'
+  map.logout '/logout', :controller => 'sessions', :action => 'destroy'
 
   # See how all your routes lay out with "rake routes"
 
