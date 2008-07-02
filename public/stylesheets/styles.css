@@ -43,6 +43,22 @@ td {
   padding:0 5px 0 0;
 }
 
+.sequence {
+  font-family:Courier;
+  font-size:10px;
+  line-height:16px;
+  width:100%;
+  background-color:#EEE;
+}
+
+.formatted_sequence {
+  font-family:Courier;
+  font-size:10px;
+  line-height:16px;
+  width:100%;
+  background-color:#EEE;
+  margin-bottom:10px;
+}
  
 /* remove any default styles */
 .nav, .nav *, .options {

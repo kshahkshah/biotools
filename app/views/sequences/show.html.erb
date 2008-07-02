@@ -1,11 +1,15 @@
 <h1><%=h @sequence.label %></h1>
 <h2><%=h @sequence.acid %></h2>
 
-<p>
-  <b>Data:</b>
-  <%=h @sequence.data %>
-</p>
-<%= @sequence.fluzy %>
+<div class="sequence">
+<%=h @sequence.bio.output(:fasta) %>
+</div>
+<div class="sequence">
+c
+</div>
+<div class="sequence">
+d
+</div>
 
 <%= link_to 'Edit', edit_sequence_path(@sequence) %> |
 <%= link_to 'Back', sequences_path %>
